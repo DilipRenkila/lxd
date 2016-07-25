@@ -79,7 +79,7 @@ func run() error {
 
 	} else {
 		config, err = lxd.LoadConfig(configPath)
-		fmt.Println("Hi")
+		fmt.Println(config)
 		if err != nil {
 			return err
 		}
