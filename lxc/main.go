@@ -46,8 +46,6 @@ func run() error {
 	if os.Getenv("LXD_CONF") != "" {
 		configDir = os.Getenv("LXD_CONF")
 	}
-	fmt.Println(configDir)
-	fmt.Println(HI)
 	configPath = os.ExpandEnv(path.Join(configDir, "config.yml"))
 
 	if len(os.Args) >= 3 && os.Args[1] == "config" && os.Args[2] == "profile" {
