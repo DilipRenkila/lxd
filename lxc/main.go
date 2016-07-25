@@ -76,7 +76,7 @@ func run() error {
 
 	if *forceLocal {
 		config = &lxd.DefaultConfig
-		fmt.Println(config)
+		fmt.Println("Hi")
 	} else {
 		config, err = lxd.LoadConfig(configPath)
 		if err != nil {
