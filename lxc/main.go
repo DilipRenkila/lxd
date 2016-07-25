@@ -79,7 +79,6 @@ func run() error {
 
 	} else {
 		config, err = lxd.LoadConfig(configPath)
-		fmt.Println(config)
 		if err != nil {
 			return err
 		}
@@ -92,6 +91,7 @@ func run() error {
 	// in others after. So, let's save the original args.
 	origArgs := os.Args
 	name := os.Args[1]
+	fmt.Println(name)
 
 	/* at this point we haven't parsed the args, so we have to look for
 	 * --no-alias by hand.
