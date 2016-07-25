@@ -43,6 +43,7 @@ func run() error {
 	noAlias := gnuflag.Bool("no-alias", false, i18n.G("Ignore aliases when determining what command to run."))
 
 	configDir := "$HOME/.config/lxc"
+	fmt.Println(configDir)
 	if os.Getenv("LXD_CONF") != "" {
 		configDir = os.Getenv("LXD_CONF")
 	}
