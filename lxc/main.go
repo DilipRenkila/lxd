@@ -47,7 +47,7 @@ func run() error {
 		configDir = os.Getenv("LXD_CONF")
 	}
 	configPath = os.ExpandEnv(path.Join(configDir, "config.yml"))
-
+	fmt.Println(configPath)
 	if len(os.Args) >= 3 && os.Args[1] == "config" && os.Args[2] == "profile" {
 		fmt.Fprintf(os.Stderr, i18n.G("`lxc config profile` is deprecated, please use `lxc profile`")+"\n")
 		os.Args = append(os.Args[:1], os.Args[2:]...)
