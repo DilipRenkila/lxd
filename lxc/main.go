@@ -91,7 +91,6 @@ func run() error {
 	// in others after. So, let's save the original args.
 	origArgs := os.Args
 	name := os.Args[1]
-	fmt.Println(name)
 
 	/* at this point we haven't parsed the args, so we have to look for
 	 * --no-alias by hand.
@@ -112,6 +111,7 @@ func run() error {
 	}
 
 	os.Args = os.Args[1:]
+	fmt.Println(os.Args[1:])
 	gnuflag.Parse(true)
 
 	shared.Log, err = logging.GetLogger("", "", *verbose, *debug, nil)
