@@ -111,7 +111,6 @@ func run() error {
 	}
 
 	os.Args = os.Args[1:]
-	fmt.Println(os.Args[1:])
 	gnuflag.Parse(true)
 
 	shared.Log, err = logging.GetLogger("", "", *verbose, *debug, nil)
@@ -134,7 +133,7 @@ func run() error {
 		fmt.Fprintf(os.Stderr, i18n.G("If this is your first time using LXD, you should also run: sudo lxd init")+"\n")
 		fmt.Fprintf(os.Stderr, i18n.G("To start your first container, try: lxc launch ubuntu:16.04")+"\n\n")
 	}
-
+	fmt.Println("%+v\n", config)
 	err = cmd.run(config, gnuflag.Args())
 	if err == errArgs {
 		/* If we got an error about invalid arguments, let's try to
